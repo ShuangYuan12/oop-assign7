@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+#include "view.h"
+#include "controller.h"
+#include "AnsiPrint.h"
+/**
+ * Print my id
+ * */
+void
+PrintMyID(std::string studId) {
+
+    std::string str = "ID: " + studId;
+    std::cout << AnsiPrint(str.c_str(),YELLOW,RED, true, true) << std::endl << std::endl;
+}
+
+
+
+int main(){
+    // Integrate the Simple MVC Pattern to run the program.
+    View view;
+    Controller controller(view);
+    controller.run();
+
+    // change to your student ID.
+    PrintMyID("110101006");
+
+    //畢展好忙真的寫不完...
+}
